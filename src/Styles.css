@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+
+svg {
+	font-family: "Russo One", sans-serif;
+	width: 100%; height: 100%;
+}
+svg text {
+	animation: stroke 3s infinite alternate;
+	stroke-width: 2;
+	stroke: #365FA0;
+	font-size: 100px;
+}
+@keyframes stroke {
+	0%   {
+		fill: rgba(72,138,204,0); stroke: rgba(54,95,160,1);
+		stroke-dashoffset: 25%; stroke-dasharray: 0 50%; stroke-width: 2;
+	}
+	70%  {fill: rgba(72,138,204,0); stroke: rgba(54,95,160,1); }
+	80%  {fill: rgba(72,138,204,0); stroke: rgba(54,95,160,1); stroke-width: 3; }
+	100% {
+		fill: rgba(72,138,204,1); stroke: rgba(54,95,160,0);
+		stroke-dashoffset: -25%; stroke-dasharray: 50% 0; stroke-width: 0;
+	}
+}
+
+.wrapper {background-color: #FFFFFF};
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+body {
+  margin: 0;
+  background: linear-gradient(to right, #2C3E50, #3498db); /* Dark and Blue color scheme */
+  font-family: 'Roboto', sans-serif; /* Modern font for readability */
+}
+
+.calculator-grid {
+
+  display: grid;
+  margin-top: 2rem;
+  justify-content: center;
+  
+  grid-template-columns: repeat(4, 6rem);
+  grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+}
+
+.calculator-grid > button {
+  /* box-shadow: 0 1px 4px rgba(0, 0, 0, .3),
+  -23px 0 20px -23px rgba(0, 0, 0, .8),
+  23px 0 20px -23px rgba(0, 0, 0, .8),
+  inset 0 0 40px rgba(0, 0, 0, .1); */
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid #fff;
+  outline: none;
+  background-color: rgba(255, 255, 255, .75);
+  color: #2C3E50; /* Dark text color for better contrast */
+  transition: background-color 0.3s ease-in-out; /* Smooth hover transition */
+}
+
+.calculator-grid > button:hover,
+.calculator-grid > button:focus {
+  color: rgba(167, 221, 60, 1);
+  color: rgb(255, 255, 255);
+  text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.2), 
+               1px 1px 1px rgba(0, 0, 0, 0.6);
+  background-color: rgba(255, 255, 255, .9);
+}
+
+
+
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .3),
+  -23px 0 20px -23px rgba(0, 0, 0, .8),
+  23px 0 20px -23px rgba(0, 0, 0, .8),
+  inset 0 0 40px rgba(0, 0, 0, .1);
+  grid-column: 1 / -1;
+  background-color: rgba(0, 0, 0, .85); 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 2rem; 
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+
+
+.output .previous-operand {
+  color: rgba(255, 255, 255, .9);
+  font-size: 1.5rem;
+}
+
+.output .current-operand {
+  color: #fff;
+  font-size: 2.5rem;
+}
+.title{
+
+  color: #fff;
+  margin-left: 2rem;
+}
